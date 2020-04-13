@@ -1,0 +1,27 @@
+.select-tooltip {
+
+    &_list {
+        position: absolute;
+        right: 10px;
+        top: 34px;
+        background-color: #FEFFFF;
+        border: 1px solid #DADBDC;
+        text-align: left;
+        width: 130px;
+    }
+
+    &_list-choice {
+        padding: 10px 15px;
+        color: #606162;
+        font-size: 14px;
+
+        &:hover,
+        &:active {
+            background-color: #D4D5D7;
+        }
+
+        &:not(:first-child) {
+            border-top: 1px solid #DADBDC;
+        }
+    }
+}

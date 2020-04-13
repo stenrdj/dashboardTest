@@ -1,0 +1,178 @@
+.campaign-item {
+    display: inline-block;
+    width: 270px;
+    border: 1px solid #EAEBEC;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-right: 28px;
+    margin-bottom: 2em;
+    position: relative;
+
+    &.add-item {
+        height: 330px;
+        border-style: dashed;
+        border-width: 2px;
+        box-shadow: none;
+
+        .campaign-item_container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            height: 100%;
+        }
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+
+        .campaign-item_add {
+            text-align: center;
+
+            &:before {
+                content: "+";
+                height: 40px;
+                width: 40px;
+                font-size: 26px;
+                background-color: #DCDDDE;
+                border-radius: 50%;
+                display: block;
+                color: #fff;
+                margin: 0.6em auto;
+                line-height: 140%;
+            }
+
+            color:#737475;
+        }
+    }
+
+    &_tooltip {
+        display: none;
+        cursor: pointer;
+
+        .tooltip-button {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background-color: #FEFDFF;
+            right: 10px;
+            top: 10px;
+        }
+
+    }
+
+    &_picture {
+        height: 170px;
+        overflow: hidden;
+
+        &:hover {
+            &>.campaign-item_tooltip {
+                display: block;
+            }
+        }
+
+        img {
+            height: 100%;
+        }
+    }
+
+    &_content {
+        padding: 15px;
+    }
+
+    &_title {
+        color: #3A3B3B;
+        line-height: 150%;
+    }
+
+    &_budget {
+        color: #929394;
+        margin-top: 1em;
+
+        &.budget_isActive {
+            .budget_status::after {
+                background-color: #0EC416;
+            }
+
+            .budget_bar {
+                background-color: #FBA144;
+            }
+        }
+
+        &.budget_isSaved {
+            .budget_status::after {
+                background-color: #FBA144;
+            }
+
+            .budget_bar {
+                background-color: #DEDFE0;
+            }
+        }
+
+        &.budget_isRejected {
+            .budget_status::after {
+                background-color: #FB0201;
+            }
+
+            .budget_bar {
+                background-color: #DEDFE0;
+            }
+        }
+
+        .budget_value {
+            font-size: 14px;
+            float: left;
+            vertical-align: middle;
+        }
+
+        .budget_status {
+            font-size: 12px;
+            float: right;
+            vertical-align: middle;
+
+            &:after {
+                content: " ";
+                display: inline-block;
+                height: 8px;
+                width: 8px;
+                border-radius: 50%;
+                background-color: inherit;
+                background-color: inherit;
+                margin-left: 10px;
+
+            }
+        }
+
+        .budget_bar {
+            display: inline-block;
+            height: 7px;
+            width: 100%;
+            background-color: inherit;
+        }
+    }
+
+    &_footer {
+        background-color: #F3F4F5;
+        padding: 10px 15px;
+
+        &:empty {
+            height: calc(40px - 25px);
+        }
+
+        .campaign_stats {
+            display: flex;
+
+            &_item {
+                &:first-child {
+                    flex-basis: 160%;
+                }
+
+                flex-basis: 100%;
+                color:#929394;
+                font-size: 13px;
+
+            }
+        }
+    }
+}

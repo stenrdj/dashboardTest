@@ -6,14 +6,20 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "cors": "^2.8.5",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "node-sass": "^4.13.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts start && node node/server.js",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test && node node/server.js",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

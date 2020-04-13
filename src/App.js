@@ -1,25 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React,{useState} from 'react';
+import Header from './components/header/header'
+import DashboardContext from './contexts/dashboard'
+import CampaignCardList from './components/campaignCard/campaignCardList'
+
+import './App.scss';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+	  const [context, setContext] = useState({ selectedCampaign: {} });
+   return (
+  	<DashboardContext.Provider  value={[context, setContext]}>
+	    <div className="dashboard-container">
+	    	<Header />
+	    	<div className="page-content page-fixedwidth">
+	    		<CampaignCardList />
+ 	    	</div>
+	    </div>
+    </DashboardContext.Provider>
   );
 }
 
